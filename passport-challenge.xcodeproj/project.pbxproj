@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8DF8F1D020E172210076D892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8F1CF20E172210076D892 /* AppDelegate.swift */; };
+		8DF8F1D220E172210076D892 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8F1D120E172210076D892 /* ViewController.swift */; };
+		8DF8F1D520E172210076D892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DF8F1D320E172210076D892 /* Main.storyboard */; };
+		8DF8F1D720E172220076D892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DF8F1D620E172220076D892 /* Assets.xcassets */; };
+		8DF8F1DA20E172220076D892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DF8F1D820E172220076D892 /* LaunchScreen.storyboard */; };
+		8DF8F1E520E172230076D892 /* passport_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8F1E420E172230076D892 /* passport_challengeTests.swift */; };
+		8DF8F1F020E172230076D892 /* passport_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8F1EF20E172230076D892 /* passport_challengeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8DF8F1E120E172230076D892 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DF8F1C420E172200076D892 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DF8F1CB20E172210076D892;
+			remoteInfo = "passport-challenge";
+		};
+		8DF8F1EC20E172230076D892 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DF8F1C420E172200076D892 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DF8F1CB20E172210076D892;
+			remoteInfo = "passport-challenge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8DF8F1CC20E172210076D892 /* passport-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "passport-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DF8F1CF20E172210076D892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8DF8F1D120E172210076D892 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8DF8F1D420E172210076D892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8DF8F1D620E172220076D892 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8DF8F1D920E172220076D892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8DF8F1DB20E172220076D892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DF8F1E020E172230076D892 /* passport-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "passport-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DF8F1E420E172230076D892 /* passport_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passport_challengeTests.swift; sourceTree = "<group>"; };
+		8DF8F1E620E172230076D892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DF8F1EB20E172230076D892 /* passport-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "passport-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DF8F1EF20E172230076D892 /* passport_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passport_challengeUITests.swift; sourceTree = "<group>"; };
+		8DF8F1F120E172230076D892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DF8F1C920E172210076D892 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DF8F1DD20E172230076D892 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DF8F1E820E172230076D892 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8DF8F1C320E172200076D892 = {
+			isa = PBXGroup;
+			children = (
+				8DF8F1CE20E172210076D892 /* passport-challenge */,
+				8DF8F1E320E172230076D892 /* passport-challengeTests */,
+				8DF8F1EE20E172230076D892 /* passport-challengeUITests */,
+				8DF8F1CD20E172210076D892 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8DF8F1CD20E172210076D892 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DF8F1CC20E172210076D892 /* passport-challenge.app */,
+				8DF8F1E020E172230076D892 /* passport-challengeTests.xctest */,
+				8DF8F1EB20E172230076D892 /* passport-challengeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8DF8F1CE20E172210076D892 /* passport-challenge */ = {
+			isa = PBXGroup;
+			children = (
+				8DF8F1CF20E172210076D892 /* AppDelegate.swift */,
+				8DF8F1D120E172210076D892 /* ViewController.swift */,
+				8DF8F1D320E172210076D892 /* Main.storyboard */,
+				8DF8F1D620E172220076D892 /* Assets.xcassets */,
+				8DF8F1D820E172220076D892 /* LaunchScreen.storyboard */,
+				8DF8F1DB20E172220076D892 /* Info.plist */,
+			);
+			path = "passport-challenge";
+			sourceTree = "<group>";
+		};
+		8DF8F1E320E172230076D892 /* passport-challengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				8DF8F1E420E172230076D892 /* passport_challengeTests.swift */,
+				8DF8F1E620E172230076D892 /* Info.plist */,
+			);
+			path = "passport-challengeTests";
+			sourceTree = "<group>";
+		};
+		8DF8F1EE20E172230076D892 /* passport-challengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8DF8F1EF20E172230076D892 /* passport_challengeUITests.swift */,
+				8DF8F1F120E172230076D892 /* Info.plist */,
+			);
+			path = "passport-challengeUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DF8F1CB20E172210076D892 /* passport-challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DF8F1F420E172230076D892 /* Build configuration list for PBXNativeTarget "passport-challenge" */;
+			buildPhases = (
+				8DF8F1C820E172210076D892 /* Sources */,
+				8DF8F1C920E172210076D892 /* Frameworks */,
+				8DF8F1CA20E172210076D892 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "passport-challenge";
+			productName = "passport-challenge";
+			productReference = 8DF8F1CC20E172210076D892 /* passport-challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8DF8F1DF20E172230076D892 /* passport-challengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DF8F1F720E172230076D892 /* Build configuration list for PBXNativeTarget "passport-challengeTests" */;
+			buildPhases = (
+				8DF8F1DC20E172230076D892 /* Sources */,
+				8DF8F1DD20E172230076D892 /* Frameworks */,
+				8DF8F1DE20E172230076D892 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DF8F1E220E172230076D892 /* PBXTargetDependency */,
+			);
+			name = "passport-challengeTests";
+			productName = "passport-challengeTests";
+			productReference = 8DF8F1E020E172230076D892 /* passport-challengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8DF8F1EA20E172230076D892 /* passport-challengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DF8F1FA20E172230076D892 /* Build configuration list for PBXNativeTarget "passport-challengeUITests" */;
+			buildPhases = (
+				8DF8F1E720E172230076D892 /* Sources */,
+				8DF8F1E820E172230076D892 /* Frameworks */,
+				8DF8F1E920E172230076D892 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DF8F1ED20E172230076D892 /* PBXTargetDependency */,
+			);
+			name = "passport-challengeUITests";
+			productName = "passport-challengeUITests";
+			productReference = 8DF8F1EB20E172230076D892 /* passport-challengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8DF8F1C420E172200076D892 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Holt, Robert";
+				TargetAttributes = {
+					8DF8F1CB20E172210076D892 = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+					8DF8F1DF20E172230076D892 = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = 8DF8F1CB20E172210076D892;
+					};
+					8DF8F1EA20E172230076D892 = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = 8DF8F1CB20E172210076D892;
+					};
+				};
+			};
+			buildConfigurationList = 8DF8F1C720E172200076D892 /* Build configuration list for PBXProject "passport-challenge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8DF8F1C320E172200076D892;
+			productRefGroup = 8DF8F1CD20E172210076D892 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DF8F1CB20E172210076D892 /* passport-challenge */,
+				8DF8F1DF20E172230076D892 /* passport-challengeTests */,
+				8DF8F1EA20E172230076D892 /* passport-challengeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8DF8F1CA20E172210076D892 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DF8F1DA20E172220076D892 /* LaunchScreen.storyboard in Resources */,
+				8DF8F1D720E172220076D892 /* Assets.xcassets in Resources */,
+				8DF8F1D520E172210076D892 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DF8F1DE20E172230076D892 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DF8F1E920E172230076D892 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DF8F1C820E172210076D892 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DF8F1D220E172210076D892 /* ViewController.swift in Sources */,
+				8DF8F1D020E172210076D892 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DF8F1DC20E172230076D892 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DF8F1E520E172230076D892 /* passport_challengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DF8F1E720E172230076D892 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DF8F1F020E172230076D892 /* passport_challengeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8DF8F1E220E172230076D892 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DF8F1CB20E172210076D892 /* passport-challenge */;
+			targetProxy = 8DF8F1E120E172230076D892 /* PBXContainerItemProxy */;
+		};
+		8DF8F1ED20E172230076D892 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DF8F1CB20E172210076D892 /* passport-challenge */;
+			targetProxy = 8DF8F1EC20E172230076D892 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8DF8F1D320E172210076D892 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DF8F1D420E172210076D892 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8DF8F1D820E172220076D892 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DF8F1D920E172220076D892 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8DF8F1F220E172230076D892 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8DF8F1F320E172230076D892 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8DF8F1F520E172230076D892 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "passport-challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "clayholt.passport-challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8DF8F1F620E172230076D892 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "passport-challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "clayholt.passport-challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8DF8F1F820E172230076D892 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "passport-challengeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "clayholt.passport-challengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/passport-challenge.app/passport-challenge";
+			};
+			name = Debug;
+		};
+		8DF8F1F920E172230076D892 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "passport-challengeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "clayholt.passport-challengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/passport-challenge.app/passport-challenge";
+			};
+			name = Release;
+		};
+		8DF8F1FB20E172230076D892 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "passport-challengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "clayholt.passport-challengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "passport-challenge";
+			};
+			name = Debug;
+		};
+		8DF8F1FC20E172230076D892 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "passport-challengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "clayholt.passport-challengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "passport-challenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8DF8F1C720E172200076D892 /* Build configuration list for PBXProject "passport-challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DF8F1F220E172230076D892 /* Debug */,
+				8DF8F1F320E172230076D892 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8DF8F1F420E172230076D892 /* Build configuration list for PBXNativeTarget "passport-challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DF8F1F520E172230076D892 /* Debug */,
+				8DF8F1F620E172230076D892 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8DF8F1F720E172230076D892 /* Build configuration list for PBXNativeTarget "passport-challengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DF8F1F820E172230076D892 /* Debug */,
+				8DF8F1F920E172230076D892 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8DF8F1FA20E172230076D892 /* Build configuration list for PBXNativeTarget "passport-challengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DF8F1FB20E172230076D892 /* Debug */,
+				8DF8F1FC20E172230076D892 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8DF8F1C420E172200076D892 /* Project object */;
+}
