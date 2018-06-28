@@ -19,6 +19,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var hobbiesTextView: UITextView!
     
     @IBOutlet weak var hobbiesHeight: NSLayoutConstraint!
+    
     var profile: Profile?
     let blue = UIColor(red: 155/255, green: 212/255, blue: 214/255, alpha: 1)
     let pink = UIColor(red: 217/255, green: 187/255, blue: 215/255, alpha: 1)
@@ -67,13 +68,28 @@ class ProfileViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         let ref = Database.database().reference().child("profiles").child((profile?.id)!).child("hobbies")
         ref.setValue(hobbiesTextView.text) // update hobbies when leaving this screen
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // handle deletion
+    @IBAction func deleteButtonPress(_ sender: Any) {
+        let alert = UIAlertController(title: "Delete \(profile!.name)", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+            Database.database().reference().child("profiles").child((self.profile?.id)!).child("deleted").setValue(true) // soft deleting this profile
+            self.navigationController?.popViewController(animated: true)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            
+        }))
+        
+        present(alert, animated: true, completion: nil)
     }
     
     @objc func dismissKeyboard(){

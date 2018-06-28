@@ -231,6 +231,15 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnr-PC-Xlx">
+                                        <rect key="frame" x="337" y="8" width="30" height="33"/>
+                                        <accessibility key="accessibilityConfiguration" label="Delete"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="🗑️"/>
+                                        <connections>
+                                            <action selector="deleteButtonPress:" destination="del-ba-zU7" eventType="touchUpInside" id="GX6-JS-fVF"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.60784313729999995" green="0.83137254900000002" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -238,10 +247,12 @@
                                     <constraint firstItem="HPS-XO-Xnu" firstAttribute="top" secondItem="e4U-5M-HOx" secondAttribute="bottom" constant="6" id="8G1-v1-3J0"/>
                                     <constraint firstItem="e4U-5M-HOx" firstAttribute="top" secondItem="Gte-dE-93v" secondAttribute="bottom" constant="8" id="BWR-LY-UPZ"/>
                                     <constraint firstItem="HPS-XO-Xnu" firstAttribute="leading" secondItem="SS3-F2-qdw" secondAttribute="leading" constant="8" id="Nrp-0Y-qTI"/>
+                                    <constraint firstItem="wnr-PC-Xlx" firstAttribute="top" secondItem="SS3-F2-qdw" secondAttribute="top" constant="8" id="TXr-fU-nje"/>
                                     <constraint firstAttribute="trailing" secondItem="e4U-5M-HOx" secondAttribute="trailing" constant="8" id="UWj-JG-pbY"/>
                                     <constraint firstItem="Gte-dE-93v" firstAttribute="top" secondItem="SS3-F2-qdw" secondAttribute="top" constant="20" id="a6Z-nq-V5q"/>
                                     <constraint firstAttribute="height" constant="235" id="lzQ-Fz-bHV"/>
                                     <constraint firstAttribute="trailing" secondItem="HPS-XO-Xnu" secondAttribute="trailing" constant="8" id="qGZ-Kq-jJQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="wnr-PC-Xlx" secondAttribute="trailing" constant="8" id="vpr-xi-J9S"/>
                                     <constraint firstItem="Gte-dE-93v" firstAttribute="centerX" secondItem="SS3-F2-qdw" secondAttribute="centerX" id="x4q-CE-x4N"/>
                                 </constraints>
                             </view>

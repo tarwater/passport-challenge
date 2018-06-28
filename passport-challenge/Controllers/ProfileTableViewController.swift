@@ -31,14 +31,20 @@ class ProfileTableViewController: UITableViewController {
                 
                 let id = snap.key
                 let hobbies = dict["hobbies"] as? String ?? ""
+                let deleted = dict["deleted"] as? Bool ?? false
+                let image = dict["image"] as? String ?? ""
 
-                if let found = self.profiles.first(where: {$0.id == id}) { // does pet already exist?
-                    found.hobbies = hobbies // update the hobbies
-                } else {
+                if let found = self.profiles.enumerated().first(where: {$0.element.id == id}) { // this pet already exists?
+                    if(deleted){ // is this profile deleted? (using soft deletes)
+                        self.profiles.remove(at: found.offset) // remove it
+                    } else {
+                        found.element.hobbies = hobbies // update the hobbies
+                        found.element.image = image // update the image (can be slow depending on upload)
+                    }
+                } else if (deleted == false){
                     let name = dict["name"] as? String ?? ""
                     let age = dict["age"] as? Int ?? 0
                     let gender = dict["gender"] as? String ?? ""
-                    let image = dict["image"] as? String ?? ""
                     let profile = Profile(name: name, gender: gender, age: age, hobbies: hobbies, image: image, id: id) // create new pet profile
                     self.profiles += [profile]
                 }
@@ -205,10 +211,16 @@ class ProfileTableViewController: UITableViewController {
             let dict = snapshot.value as! NSDictionary
             let hobbies = dict["hobbies"] as? String ?? ""
             let image = dict["image"] as? String ?? ""
-            if let found = self.profiles.first(where: {$0.id == id}) { // this pet already exists?
-                found.hobbies = hobbies // update the hobbies
-                found.image = image // update the image (can be slow depending on upload)
-            } else {
+            let deleted = dict["deleted"] as? Bool ?? false
+            
+            if let found = self.profiles.enumerated().first(where: {$0.element.id == id}) { // this pet already exists?
+                if(deleted){  // is this profile deleted? (using soft deletes)
+                    self.profiles.remove(at: found.offset) // remove it
+                } else {
+                    found.element.hobbies = hobbies // update the hobbies
+                    found.element.image = image // update the image (can be slow depending on upload)
+                }
+            } else if (deleted == false){
                 let name = dict["name"] as? String ?? ""
                 let age = dict["age"] as? Int ?? 0
                 let gender = dict["gender"] as? String ?? ""
