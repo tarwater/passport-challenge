@@ -19,7 +19,8 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-       timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: {_ in
+        // send the user to the main screen after 3 seconds on the splash page
+        timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: {_ in
             self.performSegue(withIdentifier: "ToProfiles", sender: self)
             }
         )

@@ -17,6 +17,9 @@ class AddProfileViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var ageField: UITextField!
     @IBOutlet weak var genderPicker: UISegmentedControl!
     @IBOutlet weak var hobbiesField: UITextView!
+    @IBOutlet weak var hobbiesHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     let storage = Storage.storage()
     var storageRef: StorageReference?
@@ -26,6 +29,8 @@ class AddProfileViewController: UIViewController, UIImagePickerControllerDelegat
     let blue = UIColor(red: 155/255, green: 212/255, blue: 214/255, alpha: 1)
     let pink = UIColor(red: 217/255, green: 187/255, blue: 215/255, alpha: 1)
     let brown = UIColor(red: 204/255, green: 183/255, blue: 157/255, alpha: 1)
+    
+    var imageChosen = false // flag indicating whether or not the user provided an image
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,15 +44,21 @@ class AddProfileViewController: UIViewController, UIImagePickerControllerDelegat
         hobbiesField.layer.borderWidth = 0.5
         hobbiesField.layer.cornerRadius = 5.0
         
-        let killKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        saveButton.isEnabled = false // saving is disabled until a name is entered
+        
+        nameField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged) // register for changes to the name field
+
+        let killKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)) // register a gesture recognizer for dismissing the keyboard
         view.addGestureRecognizer(killKeyboardGesture)
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        // you can tap the default avatar to select an image
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:))) // register a gesture recognizer for uploading images
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)
         
         storageRef = storage.reference()
         
+        // register keyboard events, so the view can be adjusted accordingly
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
@@ -62,7 +73,7 @@ class AddProfileViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func genderControl(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
+        switch sender.selectedSegmentIndex { // change image border and segment control color depending on selected gender
         case 0:
             gender = "male"
             sender.tintColor = blue
@@ -76,6 +87,11 @@ class AddProfileViewController: UIViewController, UIImagePickerControllerDelegat
         }
     }
     
+    @objc func textFieldDidChange(_ textField: UITextField) {
+       saveButton.isEnabled = (textField.text != "") // can't save without a name
+    }
+    
+    // stuff for uploading an image
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
@@ -96,14 +112,15 @@ class AddProfileViewController: UIViewController, UIImagePickerControllerDelegat
     
     @objc func imagePickerController(_ picker: UIImagePickerController, pickedImage: UIImage?) {
         imageView.image = pickedImage
+        imageChosen = true
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func save(_ sender: Any) {
+    @IBAction func save(_ sender: Any) { // save button
         
         let name = nameField.text ?? ""
         let hobbies = hobbiesField.text ?? ""
-        let age = Int(ageField.text!) ?? 0
+        let age = Int(ageField.text!) ?? -1 // default age is -1, which displays as "unknown"
         
         let profile = [
             "name": name,
@@ -115,24 +132,28 @@ class AddProfileViewController: UIViewController, UIImagePickerControllerDelegat
         let ref = Database.database().reference().child("profiles").childByAutoId() // get a reference to the newly saved profile
         ref.setValue(profile)  // save our pet's data
         
-        let imageData = UIImagePNGRepresentation(imageView.image!) //get the profile image data
-        let id = ref.key  // id = the id of the profile
-        let imageRef = storageRef?.child(id) // the image will be stored under the pet's ID
-        
-        let metadata = StorageMetadata()
-        metadata.contentType = "image/png" // set content type of upload
-        
-        imageRef?.putData(imageData!, metadata: metadata) { (metadata, error) in
-            imageRef?.downloadURL { (url, error) in
-                guard let downloadURL = url else {  // get the download URL of the newly uploaded image
-                    // Uh-oh, an error occurred!
-                    return
+        if(imageChosen == true){
+            let imageData = UIImagePNGRepresentation(imageView.image!) //get the profile image data
+            let id = ref.key  // id = the id of the profile
+            let imageRef = storageRef?.child(id) // the image will be stored under the pet's ID
+            
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/png" // set content type of upload
+            
+            imageRef?.putData(imageData!, metadata: metadata) { (metadata, error) in
+                imageRef?.downloadURL { (url, error) in
+                    guard let downloadURL = url else {  // get the download URL of the newly uploaded image
+                        // Uh-oh, an error occurred!
+                        return
+                    }
+                    ref.child("image").setValue(downloadURL.absoluteString) // give the URL to the pet object in the database
+                    self.imageChosen = false
+                    self.dismiss(animated: true, completion: nil)
                 }
-                ref.child("image").setValue(downloadURL.absoluteString) // give the URL to the pet object in the database
             }
+        } else {
+            dismiss(animated: true, completion: nil)
         }
-        
-        dismiss(animated: true, completion: nil)
     }
     
     // MARK: Keyboard show/hide stuff
@@ -143,24 +164,16 @@ class AddProfileViewController: UIViewController, UIImagePickerControllerDelegat
     
     var keyboardSize: CGFloat? = nil;
     
+    // methods for adjusting the hobbies text field height constraint when keyboard shows/hides
     @objc func keyboardWillShow(notification: NSNotification) {
-        
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0{
-                if(self.keyboardSize == nil) {self.keyboardSize = keyboardSize.height; }
-                guard self.keyboardSize != nil else {return};
-                self.view.frame.origin.y -= self.keyboardSize!;
-            }
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            hobbiesHeight.constant = 310 - keyboardSize.height - 8
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
-            if self.view.frame.origin.y != 0{
-                guard self.keyboardSize != nil else {return}
-                self.view.frame.origin.y += self.keyboardSize!
-                
-            }
+        if ((notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+            hobbiesHeight.constant = 310
         }
     }
 }

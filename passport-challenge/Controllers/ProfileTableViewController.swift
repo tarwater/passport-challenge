@@ -17,8 +17,8 @@ class ProfileTableViewController: UITableViewController {
     
     let blue = UIColor(red: 155/255, green: 212/255, blue: 214/255, alpha: 1)
     let pink = UIColor(red: 217/255, green: 187/255, blue: 215/255, alpha: 1)
-    let brown = UIColor(red: 204/255, green: 183/255, blue: 157/255, alpha: 1)
-
+    let brown = UIColor(red: 204/255, green: 183/255, blue: 157/255, alpha: 1) // My colors
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,14 +32,14 @@ class ProfileTableViewController: UITableViewController {
                 let id = snap.key
                 let hobbies = dict["hobbies"] as? String ?? ""
 
-                if let found = self.profiles.first(where: {$0.id == id}) { // this pet already exists?
+                if let found = self.profiles.first(where: {$0.id == id}) { // does pet already exist?
                     found.hobbies = hobbies // update the hobbies
                 } else {
                     let name = dict["name"] as? String ?? ""
                     let age = dict["age"] as? Int ?? 0
                     let gender = dict["gender"] as? String ?? ""
                     let image = dict["image"] as? String ?? ""
-                    let profile = Profile(name: name, gender: gender, age: age, hobbies: hobbies, image: image, id: id)
+                    let profile = Profile(name: name, gender: gender, age: age, hobbies: hobbies, image: image, id: id) // create new pet profile
                     self.profiles += [profile]
                 }
             }
@@ -54,7 +54,6 @@ class ProfileTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -71,6 +70,7 @@ class ProfileTableViewController: UITableViewController {
         
         let profile = profiles[indexPath.row]
         
+        // filter out unwanted profiles by setting cell height to 0
         if filter == "none" || profile.gender == filter{
             return 80
         } else {
@@ -90,11 +90,14 @@ class ProfileTableViewController: UITableViewController {
         
         cell.profileImage.layer.masksToBounds = true
         cell.profileImage.layer.borderWidth = 2
-        cell.profileImage.layer.borderColor = profile.gender == "male" ? blue.cgColor : pink.cgColor
         cell.profileImage.layer.cornerRadius = cell.profileImage.bounds.width / 2
-        
-        let url = URL(string: profile.image)
-        cell.imageView?.kf.setImage(with: url)
+        cell.profileImage.layer.borderColor = profile.gender == "male" ? self.blue.cgColor : self.pink.cgColor // set appropriate image border color
+        cell.hobbiesLabel.text = profile.hobbies
+
+        if(profile.image != ""){  // Did they pick an avatar?
+            let url = URL(string: profile.image)
+            cell.profileImage.kf.setImage(with: url) // load the image
+        }
         
         return cell
     }
@@ -102,7 +105,7 @@ class ProfileTableViewController: UITableViewController {
     
     @IBAction func menuClick(_ sender: Any) {
         let message = NSLocalizedString("Filter", comment: "Filters and sorting")
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)  // using an alert for sorting/filtering options
         
         if filter == "none" {
             alert.addAction(UIAlertAction(title: "Males only", style: .default) {  _ in
@@ -161,15 +164,15 @@ class ProfileTableViewController: UITableViewController {
     
     
     func sortList(type: String){
-        switch type {
+        switch type {  // switch to handle various types of list sorting
         case "a-z":
             profiles.sort {(o1, o2) -> Bool in
-                return o1.name < o2.name
+                return o1.name.lowercased() < o2.name.lowercased()
             }
             self.tableView.reloadData()
         case "z-a":
             profiles.sort {(o1, o2) -> Bool in
-                return o1.name > o2.name
+                return o1.name.lowercased() > o2.name.lowercased()
             }
             self.tableView.reloadData()
         case "oldest":
@@ -198,18 +201,18 @@ class ProfileTableViewController: UITableViewController {
     func setRealTimeUpdates(){
         let ref = Database.database().reference()
         ref.child("profiles").observe(DataEventType.childChanged, with: {(snapshot) in
-            
             let id = snapshot.key
             let dict = snapshot.value as! NSDictionary
             let hobbies = dict["hobbies"] as? String ?? ""
-            
+            let image = dict["image"] as? String ?? ""
             if let found = self.profiles.first(where: {$0.id == id}) { // this pet already exists?
                 found.hobbies = hobbies // update the hobbies
+                found.image = image // update the image (can be slow depending on upload)
             } else {
                 let name = dict["name"] as? String ?? ""
                 let age = dict["age"] as? Int ?? 0
                 let gender = dict["gender"] as? String ?? ""
-                let image = dict["image"] as? String ?? ""
+                let image = image
                 let profile = Profile(name: name, gender: gender, age: age, hobbies: hobbies, image: image, id: id)
                 self.profiles += [profile]
             }

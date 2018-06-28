@@ -14,7 +14,7 @@ class Profile {
     let age: Int
     let gender: String
     var hobbies: String
-    let image: String
+    var image: String
     let id: String
     
     init(name: String, gender: String, age: Int, hobbies: String, image: String, id: String){
