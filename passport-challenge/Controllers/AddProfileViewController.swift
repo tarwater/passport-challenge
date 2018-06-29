@@ -118,6 +118,8 @@ class AddProfileViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBAction func save(_ sender: Any) { // save button
         
+        saveButton.isEnabled = false
+        
         let name = nameField.text ?? ""
         let hobbies = hobbiesField.text ?? ""
         let age = Int(ageField.text!) ?? -1 // default age is -1, which displays as "unknown"
